@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Main Page</title>
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <script src="https://kit.fontawesome.com/05b272808e.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+    </head>
+    <body onload="checkingidpass()">
+        <div id="allofpart">
+            <button onclick="topFunction()" id="myBtn" title="Go to top">▲</button>
+            <h1>Cashier Machine</h1>
+            <h2 id="greetings"></h2>
+            <input type="button" onclick="logout()" value="LOG OUT">
+            <nav>
+                <ul class="ul">
+                    <button class="li" onclick="mainmenu()" id="choose1">Main</li>
+                    <button class="li" onclick="secondpart()" id="choose2">List Products</li>
+                    <button class="li" onclick="thirdpart()" id="choose3">Add Product</li>
+                    <button class="li" onclick="fourthpart()" id="choose4">Remove Product</li>
+                    <button class="li" onclick="fifthpart()" id="choose5">Cv of The Web Creator</li>
+                </ul>
+            </nav><br>
+            <div id="part1">
+            <form>
+                <label>Please input the product code to input or remove from list bellow</label><br>
+                <input type="text" id="theinput" placeholder="Input the product code">
+                <input type="button" onclick="buttoninputpro()" value="Input">
+                <input type="button" onclick="removed()" value="REMOVE">
+                <input type="button" onclick="resetinp()" value="CANCEL">
+                
+            </form>
+            <label>Please input Amount of Buyer Paid</label><br>
+            <label>Rp</label>
+            <input type="text" id="amount" placeholder="Input the amount">
+            <input type="button" onclick="pay()" value="PAY NOW">
+            <span id="cekbutt"></span>
+            
+            <div id="printed">
+                <div class="listorder" id="listorder"></div>
+                <h1 id="sumofall"></h1>
+                <h3 id="detailcek"></h3>
+            </div>
+            
+            </div>
+            <div id="part2">
+                <h3>Products in this app</h3>
+                <div id="products"></div>
+            </div>
+            <div id="part3">
+                <h3>Add another product here</h3>
+                <form>
+                    <label>Input the new product code</label><br>
+                    <input type="text" id="newcode">
+                    <input type="button" onclick="coderandom()" value="Get Random Code Here"><br>
+                    <label>Input the new product name</label><br>
+                    <input type="text" id="newname"><br><br>
+                    <label>Input the new product price</label><br>
+                    <label>Rp</label>
+                    <input type="number" id="newprice"><br>
+                    <input type="button" onclick="addproduct()" value="Add">
+                </form>
+            </div>
+            <div id="part4">
+                <h3>Remove the product in this app</h3>
+                <form>
+                    <input type="text" id="removepro" placeholder="Input the product code">
+                    <input type="button" onclick="removeproduct()" value="enter">
+                </form>
+            </div>
+            <div id="part5">
+                <h1 class="cvtitle">Curriculum Vitae</h1>
+                <div class="layoutpage">
+                    <div class="thesheet">
+                        <div class="leftsidepage">
+                            <!--Left Side-->
+                            <div class="fistleftblock">
+                                <div class="namemod"><h3>Markus Raja Sinabutar</h3></div><br>
+                                <div><img src="mypictprofile.jpg" alt="Picture Profile" class="imgprofile"></div>
+                                <div><p>College Student</p></div>
+                            </div>
+                            <div class="addressblock">
+                                <h3><i class="fas fa-map-marked-alt"></i>&nbsp;Address</h3>
+                                <p>Merpati 4 Street, Perum Griya Asri 2 Block H 30 No 04, Tambun Selatan, Kab Bekasi(17510)</p>
+                                <div class="contactadjust">
+                                    <h3><i class="fas fa-address-card"></i>&nbsp; Contact</h3>
+                                    <ul>
+                                        <li class="nolitype"> 
+                                            <div class="iconcontact"><i class="fas fa-mobile-alt"></i> </div> 
+                                            <div>Cellphone : <a href="https://api.whatsapp.com/send?phone=6285311508284">(+62) 853 1150 8284 </a></div>
+                                            </li>
+                                        <li class="nolitype">
+                                            <div class="iconemail"><i class="far fa-envelope"></i> </div>
+                                            <div class="breakall">Email : <a href="mailto:mark.sinabutar58@gmail.com">mark.sinabutar58@gmail.com</a></div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="skillsblock">
+                                <h3><i class="fas fa-cogs"></i>&nbsp;Skills</h3>
+                                <div>
+                                    <label class="adjustfontskill" >Digital Marketing:</label><br>
+                                    <progress  value="80" max="100" class="adjustprogress"> </progress>
+                                    <span>80%</span><br>
+                                    <label class="adjustfontskill" >Repair The Software of Digital Device</label><br>
+                                    <progress  value="94" max="100" class="adjustprogress">  </progress>
+                                    <span>94%</span>
+                                </div>
+                            </div>
+                            <div class="languageblock">
+                                <h3><i class="fas fa-language"></i>&nbsp;Languages</h3>
+                                <ul>
+                                    <li>English (Passive)</li>
+                                    <li>Bahasa Indonesia (Daily Language)</li>
+                                </ul>
+                            </div>
+                            <div class="mediasocialblock">
+                                <h3><i class="fas fa-hashtag"></i>&nbspMedia Social Account</h3>
+                                <ul>
+                                <li class="nolitype">
+                                    <div class="iconmedsoc"><i class="fab fa-instagram-square"></i></div>
+                                    <div class="breakall">Instagram: <a href="https://www.instagram.com/markus_raja/">@markus_raja</a></div>
+                                    </li>
+                                <li class="nolitype">
+                                    <div class="iconmedsoc"><i class="fab fa-facebook-square"></i></div>
+                                    <div class="breakall">Facebook: <a href="https://www.facebook.com/Wolf2345/">Markus Kerens</a></div>
+                                </li>
+                                <li class="nolitype">
+                                    <div class="iconmedsoc"><i class="fab fa-twitter-square"></i></div>
+                                    <div class="breakall">Twitter: <a href="https://twitter.com/marksinabutar">@marksinabutar</a></div>
+                                </li>
+                                <li class="nolitype">
+                                    <div class="iconmedsoc"><i class="fab fa-youtube-square"></i></div>
+                                    <div class="breakall">Youtube: <a href="https://www.youtube.com/channel/UCK3EsYKy-8oKDpgTbRv23nw?view_as=subscriber">Mark Sinabutar</a></div>
+                                </li>
+                                </ul>
+                            </div>
+                            <!--Left Side-->
+                        </div>
+                        <div class="rightsidepage">
+                            <!--Right Side-->
+                            <div class="aboutmeblock">
+                                <h3 class="aboutmetitle">About Me</h3>
+                                <p>Iam Markus Raja Sinabutar is a student from President University in batch 2020. My majority is Infomation Technology. Iam not bad in troubleshoter especially on Digital Devices. I have the digital marketing skills too, because i have internship at Pt.BIPIE when vocational school.</p>
+                            </div>
+                            <div class="personalblock">
+                                <h3 class="personaltitle">Personal Details</h3>
+                                <ul>
+                                    <li>Name : Markus Raja Sinabutar</li>
+                                    <li>Date of Birth :  September 06, 2002</li>
+                                    <li>Gender : Male</li>
+                                    <li>Marital status : Single</li>
+                                    <li>Religion : Catholic</li>
+                                    <li>Nationality : Indonesian</li>
+                                </ul>
+                            </div>
+                            <div class="jobblock">
+                                <h3 class="jobtitle">Job Experience</h3>
+                                <p>I just have one job experience that is a Digital Marketing Job at Pt. BIPIE (Internsip) for January 2019 – March 2019</p>
+                            </div>
+                            <div class="edublock">
+                                <h3 class="edutitle">Education</h3>
+                                <ol>
+                                    <li>&nbsp;2007 – 2008
+                                        <dl>&nbsp;Private Kindergarten School Putra Bangsa</dl>
+                                    </li>
+                                    <li>&nbsp;2008 – 2014
+                                        <dl>&nbsp;State Elementary School 4 Sumber Jaya</dl>
+                                    </li>
+                                    <li>&nbsp;2014 – 2017
+                                        <dl>&nbsp;State Junior High School 5 Tambun Selatan</dl>
+                                    </li>
+                                    <li>&nbsp;2017 – 2020
+                                        <dl>&nbsp;Private Vocational High School Bintang Timur</dl>
+                                    </li>
+                                    <li>&nbsp;2020 – Soon
+                                        <dl>&nbsp;President University</dl>
+                                    </li>
+                                </ol>
+                            </div>
+                            <div class="personalityblock">
+                                <h3 class="personalitytitle">Personality</h3>
+                                <p>Honest, kind, hardworking, tolerant, ready to work with a team, and responsible.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script src="script.js" type="text/javascript"></script>
+        </div>
+        
+        <div id="blockanythingside" class="modal">
+            <div class="modal-content animate" method="post">
+            <h1>Please Register and Login your self first</h1>
+            <input type="submit" onclick="regpage()" value="REGISTER">
+            <input type="submit" onclick="logpage()" value="LOGIN">
+            </div>
+        </div>
+    </body>
+    
+</html>
